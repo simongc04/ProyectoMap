@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
+
 }
 
 android {
@@ -40,6 +42,14 @@ android {
 }
 
 dependencies {
+
+
+    ksp (libs.androidx.room.compiler)
+
+    implementation (libs.androidx.room.runtime)
+    implementation (libs.androidx.lifecycle.viewmodel.ktx)
+    implementation (libs.play.services.maps)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
